@@ -1,11 +1,14 @@
 package model.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class HourContract {
     private Date date;
     private Double valuePerHour;
     private Integer hours;
+
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public HourContract(Date date, Double valuePerHour, Integer hours) {
         this.date = date;
@@ -38,5 +41,8 @@ public class HourContract {
     }
     public double totalValue(){
         return valuePerHour * hours;
+    }
+    public String toString(){
+        return getDate() + sdf.format(date);
     }
 }

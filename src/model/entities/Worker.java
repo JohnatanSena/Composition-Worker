@@ -4,18 +4,17 @@ import model.enums.WorkerLevel;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Worker {
     private String name;
     private WorkerLevel level;
-    private double baseSalary;
+    private Double baseSalary;
 
     Department department;
     List<HourContract> contracts = new ArrayList<>();
 
-    public Worker(String name, WorkerLevel level, double baseSalary, Department department) {
+    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
         this.name = name;
         this.level = level;
         this.baseSalary = baseSalary;
@@ -69,7 +68,7 @@ public class Worker {
         Calendar cal = Calendar.getInstance();
         for(HourContract c : contracts){
             cal.setTime(c.getDate());
-            int c_month = cal.get(Calendar.MONTH);
+            int c_month = 1 + cal.get(Calendar.MONTH);
             int c_year = cal.get(Calendar.YEAR);
             if(month == c_month & year == c_year){
                 sum += c.totalValue();
@@ -77,5 +76,11 @@ public class Worker {
         }
         return sum;
     }
-    
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(name);
+        sb.append("\nDepartamento: ").append(department.getName());
+        return  sb.toString();
+     }
+
 }
