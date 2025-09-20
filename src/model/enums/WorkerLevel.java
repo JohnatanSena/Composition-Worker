@@ -1,4 +1,7 @@
 package model.enums;
 
-public class WorkerLevel {
+public enum WorkerLevel {
+    JUNIOR_LEVEL,
+    MID_LEVEL,
+    SENIOR_LEVEL;
 }
