@@ -68,20 +68,6 @@ java -cp bin Main
 
 ```
 
-## 🏗️ Estrutura do Projeto
-
-```
-src/
-├── entities/
-│   ├── Worker.java
-│   ├── Department.java
-│   └── HourContract.java
-├── enums/
-│   └── WorkerLevel.java
-└── application/
-    └── Program.java
-```
-
 ## 📋 Requisitos
 - Java JDK 11+
 - Conhecimento em POO
